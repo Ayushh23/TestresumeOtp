@@ -153,6 +153,19 @@ async def verify_otp_route(request: VerifyOtpRequest):
     else:
         raise HTTPException(status_code=400, detail="Invalid OTP or OTP expired")
 
+def initialize_prompts():
+    if prompt_collection.count_documents({}) == 0:
+        prompts = [
+            {"prompt_id": 1, "prompt_text": "Based on the candidate of a {age}-year-old student pursuing {course} in {specialization}, aiming for a career as a {career_goal}. So give them some suggestion if their resume is for another domain"},
+            {"prompt_id": 2, "prompt_text": "Identify skills of the candidate from the following list, suggest improvements to highlight key strengths."},
+            {"prompt_id": 3, "prompt_text": "Evaluate resume clarity, structure, and formatting. Point out any issues or improvements to make it more professional."}
+        ]
+        prompt_collection.insert_many(prompts)
+
+def get_prompts_from_db():
+    return [doc["prompt_text"] for doc in prompt_collection.find().sort("prompt_id", 1)]
+
+
 # =============== MODIFY EXISTING EVALUATE ROUTE ================
 @app.post("/evaluate")
 async def evaluate_resume(

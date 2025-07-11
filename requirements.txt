@@ -4,10 +4,9 @@ pydantic
 python-multipart
 pymongo
 bcrypt
-secrets
-smtplib3
-email-validator
 PyMuPDF
 google-generativeai
 aiofiles
 python-dotenv
+email-validator
+pyOpenSSL  # <-- Add this line

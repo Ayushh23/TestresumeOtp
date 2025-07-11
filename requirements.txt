@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+pydantic
+python-multipart
+pymongo
+bcrypt
+secrets
+smtplib3
+email-validator
+PyMuPDF
+google-generativeai
+aiofiles
+python-dotenv

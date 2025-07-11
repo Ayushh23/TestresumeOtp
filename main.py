@@ -23,9 +23,9 @@ COLLECTION_NAME = "prompts"
 # Email configuration (replace with your SMTP details)
 SMTP_SERVER = 'smtp.gmail.com'
 SMTP_PORT = 587
-SMTP_USERNAME = 'skillzage91@gmail.com'
+SMTP_USERNAME = 'skillzage1@gmail.com'
 SMTP_PASSWORD = 'eqdrxtwchqjuyjpo'  # This is your 16-character App Password
-FROM_EMAIL = 'skillzage91@gmail.com'
+FROM_EMAIL = 'skillzage1@gmail.com'
 
 client = MongoClient(MONGO_URI)
 db = client[DB_NAME]
